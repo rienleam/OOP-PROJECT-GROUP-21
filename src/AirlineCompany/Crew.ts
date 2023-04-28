@@ -1,6 +1,7 @@
 import { CoPilot } from "../Human/Staff/CoPilot";
 import { FlightAttendant } from "../Human/Staff/FlightAttendant";
-import { Pilot } from "../Human/Staff/Pilto";
+import { Pilot } from "../Human/Staff/Pilot";
+
 
 export class Crew {
     private pilot:Pilot

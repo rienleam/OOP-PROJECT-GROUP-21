@@ -1,6 +1,6 @@
 import { Gender } from "../Person";
 import { Employee } from "./Employee";
-import { Skill } from "./Pilto";
+import { Skill } from "./Pilot";
 
 export class FlightAttendant extends Employee{
     private skill: Skill = Skill.CUSTOMER_SERVICE;
