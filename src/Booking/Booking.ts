@@ -10,3 +10,9 @@ export enum Ticket_Condition {
     ECONOMEY_FLEX,
     BUSINESS_CLASS
 }
+export class Booking {
+    private bookingReferenceNumber: number;
+    constructor (bookingReferenceNumber: number){
+        this.bookingReferenceNumber = bookingReferenceNumber;
+    }
+}
