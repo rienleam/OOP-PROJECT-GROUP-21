@@ -5,4 +5,10 @@ export class FrequentFlyer {
         this.awardPoint = awardPoint
         this.memberID = memberID
     }
+    addAwardPoint(other: number) {
+        this.awardPoint += other;
+    }
+    getAwardPoint(): number {
+        return this.awardPoint
+    }
 }

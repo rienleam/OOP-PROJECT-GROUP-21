@@ -3,11 +3,11 @@ import { Gate } from "./Gate";
 
 export class Airport {
     private name: string
-    private gate: Gate
-    private route: Route
+    private gates: Gate[]=[];
+    private routes: Route[] = [];
     constructor (name: string, gate: Gate, route: Route) {
         this.name = name;
-        this.gate = gate;
-        this.route = route;
+        this.gates.push(gate);
+        this.routes.push(route);
     }
 }

@@ -2,9 +2,11 @@ import { Seat } from "./Seat"
 
 export class Aeroplan {
     private registrationNumber: string
-    private seat: Seat
-    constructor(registrationNumber: string, seat: Seat) {
+    private seats: Seat[] = [];
+    constructor(registrationNumber: string) {
         this.registrationNumber = registrationNumber
-        this.seat = seat
+    }
+    addSeat(...seat: Seat[]){
+        this.seats.push(...seat)
     }
 }

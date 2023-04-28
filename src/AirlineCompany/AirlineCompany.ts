@@ -3,11 +3,16 @@ import { Route } from "./Route";
 
 export class AirlineCompany {
     private name: string
-    private route: Route
-    private crew: Crew
-    constructor (name: string, route: Route, crew:Crew) {
+    private routes: Route[] = [];
+    private crews: Crew[] = [];
+    constructor (name: string) {
         this.name = name;
-        this.route = route;
-        this.crew = crew;
+    }
+
+    addRoute(... route:Route[]){
+        this.routes.push(... route);
+    }
+    addCrew(...crew:Crew[]){
+        this.crews.push(... crew);
     }
 }

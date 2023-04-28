@@ -1,7 +1,10 @@
 export class Bag {
     private wigth:number;
-    public referenceNumber:string;
+    private referenceNumber:string;
     constructor(wight:number){
         this.wigth = wight;
+    }
+    addReferenceNumber(referenceNumber:string){
+        this.referenceNumber = referenceNumber;
     }
 }
