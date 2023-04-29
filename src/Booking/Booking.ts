@@ -50,7 +50,5 @@ export class Booking {
         }
 
     }
-    // getFlightTrip(){
-    //     this.getTrip().IsEqualFight()
-    // }
+    
 }
