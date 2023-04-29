@@ -1,3 +1,4 @@
+import { Passenger } from "../Human/Passenger";
 import { Seat } from "./Seat"
 
 export class Aeroplane {
@@ -12,4 +13,14 @@ export class Aeroplane {
     getAllSeat() {
        return this.seats
     }
+    getAllAvailableSeat() {
+        let availableSeat: Seat[] = [];
+        this.seats.forEach(seat => {
+            if(seat.checKAvailable() === true){
+                availableSeat.push(seat)
+            }
+        });
+        return availableSeat
+    }
+    
 }

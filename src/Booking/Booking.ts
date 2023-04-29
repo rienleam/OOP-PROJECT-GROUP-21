@@ -13,20 +13,24 @@ export enum Ticket_Condition {
     ECONOMEY_FLEX,
     BUSINESS_CLASS
 }
+export enum returnTicket{
+    TRUE,
+    FLASE
+}
 export class Booking {
     public bookingReferenceNumber: number;
     private ticket: Ticket_Condition;
     private price: number;
     public trip: Trip
-    private returnTickets?:boolean = false
-    constructor (bookingReferenceNumber: number,ticket: Ticket_Condition,trip:Trip , returnTickets?:boolean) {
+    private returnTicket:returnTicket = returnTicket.FLASE;
+    constructor (bookingReferenceNumber: number,ticket: Ticket_Condition,trip:Trip , returnTickets:returnTicket) {
         this.bookingReferenceNumber = bookingReferenceNumber;
         this.setPrice(ticket);
         this.trip = trip;
-        this.returnTickets = true;
+        this.returnTicket = returnTickets
     }
-    setReturnTickets(returnTickets: boolean){
-        this.returnTickets = returnTickets;
+    setReturnTickets(returnTickets: returnTicket){
+        this.returnTicket = returnTickets;
     }
     setPrice(ticket:Ticket_Condition) {
         if (ticket === Ticket_Condition.BUSINESS_CLASS ){
@@ -42,15 +46,24 @@ export class Booking {
     isEqual(other:Booking){
         return this.bookingReferenceNumber === other.bookingReferenceNumber 
         && this.ticket === other.ticket 
-        && this.returnTickets === other.returnTickets;
+        && this.returnTicket === other.returnTicket;
     }
     isReturn(){
-       return this.returnTickets 
+       return this.returnTicket
     }
     getTrip(){
         return this.trip
     }
-    getFlightTrip(){
-        // this.getTrip().IsEqualFight(other:Flight)
+    getReturnTicketsBooking(){
+        if (this.returnTicket === returnTicket.FLASE){
+
+            return false ;
+        }else{
+            return true ;
+        }
+
     }
+    // getFlightTrip(){
+    //     this.getTrip().IsEqualFight()
+    // }
 }

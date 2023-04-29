@@ -1,16 +1,22 @@
 import { Aeroplane } from "./Aeroplan/Aeroplan";
 import { Seat } from "./Aeroplan/Seat";
+import { AirlineCompany } from "./AirlineCompany/AirlineCompany";
 import { Crew } from "./AirlineCompany/Crew";
+import { Route } from "./AirlineCompany/Route";
 import { Airport } from "./Airport/Airport";
 import { Gate } from "./Airport/Gate";
-import { Ticket_Condition } from "./Booking/Booking";
+import { Booking, Ticket_Condition, returnTicket } from "./Booking/Booking";
+import { CreditCard } from "./Booking/CreditCard";
+import { FrequentFlyer } from "./Booking/FrequentFlyer";
 import { DateTime } from "./DateTime/DateTime";
 import { Schedule } from "./DateTime/Schedule";
+import { Passenger } from "./Human/Passenger";
 import { Gender } from "./Human/Person";
 import { CoPilot } from "./Human/Staff/CoPilot";
 import { FlightAttendant } from "./Human/Staff/FlightAttendant";
 import { Pilot } from "./Human/Staff/Pilot";
 import { Flight } from "./Trip/Fight";
+import { Trip } from "./Trip/Trip";
 
 //create Gates
 let gate1 = new Gate("1A");
@@ -34,6 +40,10 @@ let arrivalDate2 = new DateTime(2023, 10, 15, 1, 0)
 // schedude time
 let schedudeTime1 = new Schedule(departureDate1,arrivalDate1,crew1)
 
+// create passenger
+let passenger1 = new Passenger("Socheat","lun",20,"0199455",Gender.MALE)
+let passenger2 = new Passenger("Socheat","lun",20,"0199455",Gender.MALE)
+let passenger3 = new Passenger("Socheat","lun",20,"0199455",Gender.MALE)
 // create seats 
 let seat1 = new Seat("A001",Ticket_Condition.BUSINESS_CLASS)
 let seat2 = new Seat("A002",Ticket_Condition.BUSINESS_CLASS)
@@ -48,13 +58,42 @@ let seat9 = new Seat("A009",Ticket_Condition.ECONOMEY_FLEX)
 // create Aeroplane 
 let aeroplan1 = new Aeroplane("AOV6064")
 aeroplan1.addSeat(seat1,seat2,seat3,seat3,seat4,seat5,seat6,seat7,seat8,seat9)
-
+// create airport
+let airport1 = new Airport("Cambodia Airport")
+let airport2 = new Airport("UK Airport")
 //create Flight 
 let Flight1 = new Flight("CA6062",aeroplan1,gate1,schedudeTime1)
 
-//Route 
+//create Trip 
+let trip1 = new Trip("Cambodia","UK")
+trip1.addFlight(Flight1)
+trip1.setPassengerToSeat("A001",passenger1)
+
+// create booking
+let booking1 = new Booking(860767,Ticket_Condition.ECONOMEY_FLEX,trip1,returnTicket.FLASE);
+
+// create credit card
+let card1 = new CreditCard("12344",459,"5/24")
+//create frequentflyer
+let frequentflyer1 = new FrequentFlyer(100,"PS001")
+passenger1.addCreditCard(card1)
+passenger1.addFrequentFlyer(frequentflyer1)
+passenger1.bookingTicket(booking1)
+// console.log(passenger1);
+// create route 
+let route1 = new Route(airport2,airport1)
+route1.addFlight(Flight1)
+//Airline company
+let Airline = new AirlineCompany("Cambodia Airline")
+Airline.addCrew(crew1)
+Airline.addRoute(route1)
 
 
 
-// create Airports
-// let airport1 = new Airport()
+
+
+
+// console.log(Airline.getReturnTicket(Flight1));
+console.log(Airline.getReturnTicket(Flight1));
+// console.log(route1);
+
