@@ -26,6 +26,13 @@ export class AirlineCompany {
     getReturnTicket(){
         // if(this.getReturnFlight())
     }
+    getAllEmployeesSalary (): number{
+        let totalEmployeesSalary = 0;
+        this.crews.forEach(eachCrew => {
+            totalEmployeesSalary += eachCrew.getTotalSalary();
+        });
+        return totalEmployeesSalary;
+    }
 }
 
 // let Airline1 = new AirlineCompany("Cambodia Airline");

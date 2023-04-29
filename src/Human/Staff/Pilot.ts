@@ -12,4 +12,7 @@ export class Pilot extends Employee{
     constructor(firstName: string, lastName: string, age: number, phoneNumber: string, gender: Gender,salary:number,experience: number){
         super(firstName, lastName, age, phoneNumber, gender,salary,experience)
     }
+    getSalary():number{
+        return this.salary;
+    }
 }

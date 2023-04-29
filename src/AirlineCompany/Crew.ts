@@ -4,6 +4,9 @@ import { Pilot } from "../Human/Staff/Pilot";
 
 
 export class Crew {
+    getSalary() {
+        throw new Error("Method not implemented.");
+    }
     private pilot:Pilot
     private coPilot:CoPilot
     private flightAttendant: FlightAttendant[] = [];
@@ -13,5 +16,14 @@ export class Crew {
     }
     addFlightAttendant(...flightAttendant:FlightAttendant[]){
         this.flightAttendant.push(...flightAttendant);
+    }
+    getTotalSalary (): number{
+        let totalEmployeesSalary = 0;
+        totalEmployeesSalary += this.pilot.getSalary();
+        totalEmployeesSalary += this.coPilot.getSalary();
+        this.flightAttendant.forEach(eachFlightAttendant => {
+            totalEmployeesSalary += eachFlightAttendant.getSalary();
+        });
+        return totalEmployeesSalary;
     }
 }
