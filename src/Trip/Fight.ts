@@ -1,5 +1,6 @@
 import { Aeroplane } from "../Aeroplan/Aeroplan";
 import { Gate } from "../Airport/Gate";
+import { Date } from "../DateTime/Date";
 import { Schedule } from "../DateTime/Schedule";
 import { Passenger } from "../Human/Passenger";
 

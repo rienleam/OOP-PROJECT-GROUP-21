@@ -1,11 +1,10 @@
+import { Date } from "../../DateTime/Date";
 import { Gender } from "../Person";
 import { Employee } from "./Employee";
 export enum Skill{
     FLIGHT_PLANNING,
     AIR_TRAFFIC_CONTROL,
     CUSTOMER_SERVICE,
-
-
 }
 export class Pilot extends Employee{
     private skill: Skill = Skill.FLIGHT_PLANNING;

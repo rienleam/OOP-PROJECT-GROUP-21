@@ -1,14 +1,14 @@
+import { DateTime } from "../DateTime/DateTime";
+import { Schedule } from "../DateTime/Schedule";
 import { CoPilot } from "../Human/Staff/CoPilot";
 import { FlightAttendant } from "../Human/Staff/FlightAttendant";
 import { Pilot } from "../Human/Staff/Pilot";
 
 
 export class Crew {
-    getSalary() {
-        throw new Error("Method not implemented.");
-    }
     private pilot:Pilot
     private coPilot:CoPilot
+    private shedule:Schedule[] = [];
     private flightAttendant: FlightAttendant[] = [];
     constructor (pilot:Pilot, coPilot:CoPilot){
         this.pilot = pilot;
@@ -25,5 +25,14 @@ export class Crew {
             totalEmployeesSalary += eachFlightAttendant.getSalary();
         });
         return totalEmployeesSalary;
+    }
+    getFightHaveToJoin (date: DateTime){
+        let numberOfFlights = 0;
+        this.shedule.forEach(eachSchedule => {
+            if (eachSchedule.compareDate(date)) {
+                numberOfFlights += eachSchedule.getFlights();
+            }
+        });
+        return numberOfFlights;
     }
 }
