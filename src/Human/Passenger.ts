@@ -1,12 +1,13 @@
 import { Booking } from "../Booking/Booking";
 import { CreditCard } from "../Booking/CreditCard";
 import { FrequentFlyer } from "../Booking/FrequentFlyer";
+import { Flight } from "../Trip/Fight";
 import { Gender, Person } from "./Person";
 
 export class Passenger extends Person {
     private creditCard: CreditCard;
     private frequentFlyer: FrequentFlyer;
-    private bookings : Booking[] = [];
+    public bookings : Booking[] = [];
 
     constructor(firstName: string, lastName: string, age: number, phoneNumber: string, gender: Gender){
         super(firstName, lastName, age, phoneNumber, gender)
@@ -24,7 +25,6 @@ export class Passenger extends Person {
                 this.bookings.push(booking)
             }
         }
-
     }
     getCreditCard (){
         return this.creditCard;

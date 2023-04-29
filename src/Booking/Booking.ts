@@ -1,3 +1,5 @@
+import { Trip } from "../Trip/Trip";
+
 export enum Meal {
     VEGETARIAN,
     VEGAN,
@@ -11,9 +13,10 @@ export enum Ticket_Condition {
     BUSINESS_CLASS
 }
 export class Booking {
-    private bookingReferenceNumber: number;
+    public bookingReferenceNumber: number;
     private ticket: Ticket_Condition;
     private price: number;
+    public trip: Trip
     constructor (bookingReferenceNumber: number,ticket: Ticket_Condition) {
         this.bookingReferenceNumber = bookingReferenceNumber;
         this.setPrice(ticket)

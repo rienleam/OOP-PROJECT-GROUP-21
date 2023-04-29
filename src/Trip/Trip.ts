@@ -3,7 +3,7 @@ import { Bag } from "./Bag";
 import { Flight } from "./Fight";
 
 export class Trip {
-    private flights: Flight[] = [];
+    public flights: Flight[] = [];
     private bags: Bag[] = [];
     private booking:Booking;
 
