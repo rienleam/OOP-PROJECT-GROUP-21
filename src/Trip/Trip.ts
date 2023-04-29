@@ -22,7 +22,7 @@ export class Trip {
     IsEqualFight(other:Flight){
         this.flights.forEach(flight => {
             if (flight.isEqual(other)){
-                
+
             }
         });
     }

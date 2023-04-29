@@ -13,12 +13,12 @@ export enum Ticket_Condition {
     BUSINESS_CLASS
 }
 export class Booking {
-    private bookingReferenceNumber: string;
+    public bookingReferenceNumber: number;
     private ticket: Ticket_Condition;
     private price: number;
-    private returnTickets?: boolean = false;
-    private trip: Trip;
-    constructor (bookingReferenceNumber: string,ticket: Ticket_Condition,trip:Trip,returnTickets?: boolean) {
+    public trip: Trip
+    private returnTickets?:boolean = false
+    constructor (bookingReferenceNumber: number,ticket: Ticket_Condition,trip:Trip , returnTickets?:boolean) {
         this.bookingReferenceNumber = bookingReferenceNumber;
         this.setPrice(ticket);
         this.trip = trip;
