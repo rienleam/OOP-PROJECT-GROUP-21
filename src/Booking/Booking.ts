@@ -1,3 +1,4 @@
+import { Flight } from "../Trip/Fight";
 import { Trip } from "../Trip/Trip";
 
 export enum Meal {
@@ -48,5 +49,8 @@ export class Booking {
     }
     getTrip(){
         return this.trip
+    }
+    getFlightTrip(){
+        // this.getTrip().IsEqualFight(other:Flight)
     }
 }

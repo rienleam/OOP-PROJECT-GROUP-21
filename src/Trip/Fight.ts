@@ -1,14 +1,14 @@
-import { Aeroplan } from "../Aeroplan/Aeroplan";
+import { Aeroplane } from "../Aeroplan/Aeroplan";
 import { Gate } from "../Airport/Gate";
 import { Schedule } from "../DateTime/Schedule";
 
 export class Flight {
     private flightReferenceNumber: string;
-    private aeroplan:Aeroplan;
+    private aeroplan:Aeroplane;
     private gate:Gate;
     private schedule:Schedule;
 
-    constructor(flightReferenceNumber:string,aeroplan:Aeroplan,gate:Gate,schedule:Schedule) {
+    constructor(flightReferenceNumber:string,aeroplan:Aeroplane,gate:Gate,schedule:Schedule) {
         this.flightReferenceNumber = flightReferenceNumber;
         this.aeroplan = aeroplan;
         this.gate = gate;
@@ -25,7 +25,7 @@ export class Flight {
         return this.aeroplan;
     }
     getPassengerOnSeat(){
-        this.aeroplan.getSeat().forEach(seat => {
+        this.aeroplan.getAllSeat().forEach(seat => {
             seat.getPassenger()
         });
     }

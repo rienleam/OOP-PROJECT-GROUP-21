@@ -19,12 +19,14 @@ export class Trip {
     addBag( ...bag: Bag[]) {
         this.bags.push(...bag)
     }
-    IsEqualFight(other:Flight){
+    IsEqualFight(other:Flight):Flight| undefined{
+        let result:Flight| undefined
         this.flights.forEach(flight => {
             if (flight.isEqual(other)){
-
+                result = flight
             }
         });
+        return result
     }
 }
 

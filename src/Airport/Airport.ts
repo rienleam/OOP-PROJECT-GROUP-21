@@ -7,10 +7,8 @@ export class Airport {
     private gates: Gate[]=[];
     private routes: Route[] = [];
     private passengers: Passenger[] = [];
-    constructor (name: string, gate: Gate, route: Route) {
+    constructor (name: string) {
         this.name = name;
-        this.gates.push(gate);
-        this.routes.push(route);
     }
     getPassengerTripDetails (bookingReferenceNumber: number):void{
         this.passengers.forEach(eachPassenger =>{
