@@ -21,4 +21,11 @@ export class Airport {
             });
         });
     }
+    addGate(...gate: Gate[]){
+        this.gates.push(...gate);
+    }
+    addRoutes(...routes: Route[]){
+        this.routes.push(...routes);
+    }
+    getDetail(bookingReferenceNumber:string){}
 }

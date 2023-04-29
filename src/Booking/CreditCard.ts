@@ -1,16 +1,12 @@
 import { Passenger } from "../Human/Passenger"
 
 export class CreditCard {
-    private firstName: string
-    private lastName: string
+    private cardNumber: string;
     private CVV: number
     private expireDate: string
-    private passenger: Passenger
-    constructor(firstName: string, lastName: string, CVV: number, expireDate: string, passenger: Passenger) {
-        this.firstName = firstName
-        this.lastName = lastName
+    constructor(cradNumber:string,CVV: number, expireDate: string) {
+        this.cardNumber = cradNumber;
         this.CVV = CVV
         this.expireDate = expireDate
-        this.passenger = passenger
     }
 }
