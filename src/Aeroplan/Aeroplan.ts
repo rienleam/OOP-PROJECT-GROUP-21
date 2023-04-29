@@ -9,4 +9,7 @@ export class Aeroplan {
     addSeat(...seat: Seat[]){
         this.seats.push(...seat)
     }
+    getSeat() {
+       return this.seats
+    }
 }

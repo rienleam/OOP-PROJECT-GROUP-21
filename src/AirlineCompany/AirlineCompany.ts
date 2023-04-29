@@ -1,3 +1,4 @@
+import { Flight } from "../Trip/Fight";
 import { Crew } from "./Crew";
 import { Route } from "./Route";
 
@@ -15,4 +16,16 @@ export class AirlineCompany {
     addCrew(...crew:Crew[]){
         this.crews.push(... crew);
     }
+    getReturnFlight(flight:Flight): Flight| undefined{
+        let reult: Flight| undefined;
+        this.routes.forEach(route => {
+            reult = route.getFlight(flight)
+        });
+        return reult;
+    }
+    getReturnTicket(){
+        // if(this.getReturnFlight())
+    }
 }
+
+// let Airline1 = new AirlineCompany("Cambodia Airline");

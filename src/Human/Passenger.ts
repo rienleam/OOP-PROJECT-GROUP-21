@@ -43,5 +43,10 @@ export class Passenger extends Person {
             }
         }
     }
+    getReturnedBooking() {
+        this.bookings.forEach(booking => {
+            booking.getTrip()
+        });
+    }
 }
 

@@ -1,3 +1,5 @@
+import { Trip } from "../Trip/Trip";
+
 export enum Meal {
     VEGETARIAN,
     VEGAN,
@@ -15,9 +17,11 @@ export class Booking {
     private ticket: Ticket_Condition;
     private price: number;
     private returnTickets?: boolean = false;
-    constructor (bookingReferenceNumber: string,ticket: Ticket_Condition,returnTickets?: boolean) {
+    private trip: Trip;
+    constructor (bookingReferenceNumber: string,ticket: Ticket_Condition,trip:Trip,returnTickets?: boolean) {
         this.bookingReferenceNumber = bookingReferenceNumber;
-        this.setPrice(ticket)
+        this.setPrice(ticket);
+        this.trip = trip;
         this.returnTickets = true;
     }
     setReturnTickets(returnTickets: boolean){
@@ -35,6 +39,14 @@ export class Booking {
         return this.price;
     }
     isEqual(other:Booking){
-        return this.bookingReferenceNumber === other.bookingReferenceNumber && this.ticket === other.ticket && this.returnTickets === other.returnTickets
+        return this.bookingReferenceNumber === other.bookingReferenceNumber 
+        && this.ticket === other.ticket 
+        && this.returnTickets === other.returnTickets;
+    }
+    isReturn(){
+       return this.returnTickets 
+    }
+    getTrip(){
+        return this.trip
     }
 }

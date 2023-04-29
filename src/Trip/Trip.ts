@@ -3,12 +3,14 @@ import { Bag } from "./Bag";
 import { Flight } from "./Fight";
 
 export class Trip {
+    private departurePlace: string;
+    private arrivalPlace: string;
     private flights: Flight[] = [];
     private bags: Bag[] = [];
-    private booking:Booking;
-
-    constructor(booking:Booking) {
-        this.booking = booking;
+    
+    constructor(departurePlace:string, arrivalPlace:string) {
+        this.departurePlace = departurePlace;
+        this.arrivalPlace = arrivalPlace;
     }
 
     addFlight(...flight:Flight[]) {
@@ -16,6 +18,13 @@ export class Trip {
     }
     addBag( ...bag: Bag[]) {
         this.bags.push(...bag)
+    }
+    IsEqualFight(other:Flight){
+        this.flights.forEach(flight => {
+            if (flight.isEqual(other)){
+                
+            }
+        });
     }
 }
 

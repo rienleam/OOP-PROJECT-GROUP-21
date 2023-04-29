@@ -1,5 +1,4 @@
 import { Aeroplan } from "../Aeroplan/Aeroplan";
-import { Route } from "../AirlineCompany/Route";
 import { Gate } from "../Airport/Gate";
 import { Schedule } from "../DateTime/Schedule";
 
@@ -8,13 +7,28 @@ export class Flight {
     private aeroplan:Aeroplan;
     private gate:Gate;
     private schedule:Schedule;
-    private route:Route
 
-    constructor(flightReferenceNumber:string,aeroplan:Aeroplan,gate:Gate,schedule:Schedule,route:Route) {
+    constructor(flightReferenceNumber:string,aeroplan:Aeroplan,gate:Gate,schedule:Schedule) {
         this.flightReferenceNumber = flightReferenceNumber;
         this.aeroplan = aeroplan;
         this.gate = gate;
         this.schedule = schedule;
-        this.route = route;
     }
+
+    isEqual(other:Flight):boolean {
+        return this.flightReferenceNumber === other.flightReferenceNumber 
+        && this.aeroplan === other.aeroplan 
+        && this.gate === other.gate 
+        && this.schedule === other.schedule
+    }
+    getAeroplan(){
+        return this.aeroplan;
+    }
+    getPassengerOnSeat(){
+        this.aeroplan.getSeat().forEach(seat => {
+            seat.getPassenger()
+        });
+    }
+
+
 }
