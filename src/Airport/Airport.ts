@@ -10,4 +10,13 @@ export class Airport {
         this.gates.push(gate);
         this.routes.push(route);
     }
+
+    addGate(...gate: Gate[]){
+        this.gates.push(...gate);
+    }
+    addRoutes(...routes: Route[]){
+        this.routes.push(...routes);
+    }
+
+    getDetail(bookingReferenceNumber:string){}
 }

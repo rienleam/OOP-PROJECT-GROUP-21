@@ -11,12 +11,17 @@ export enum Ticket_Condition {
     BUSINESS_CLASS
 }
 export class Booking {
-    private bookingReferenceNumber: number;
+    private bookingReferenceNumber: string;
     private ticket: Ticket_Condition;
     private price: number;
-    constructor (bookingReferenceNumber: number,ticket: Ticket_Condition) {
+    private returnTickets?: boolean = false;
+    constructor (bookingReferenceNumber: string,ticket: Ticket_Condition,returnTickets?: boolean) {
         this.bookingReferenceNumber = bookingReferenceNumber;
         this.setPrice(ticket)
+        this.returnTickets = true;
+    }
+    setReturnTickets(returnTickets: boolean){
+        this.returnTickets = returnTickets;
     }
     setPrice(ticket:Ticket_Condition) {
         if (ticket === Ticket_Condition.BUSINESS_CLASS ){
@@ -28,5 +33,8 @@ export class Booking {
     }
     getPrice() {
         return this.price;
+    }
+    isEqual(other:Booking){
+        return this.bookingReferenceNumber === other.bookingReferenceNumber && this.ticket === other.ticket && this.returnTickets === other.returnTickets
     }
 }
