@@ -21,12 +21,11 @@ export class Booking {
     public bookingReferenceNumber: number;
     private ticket: Ticket_Condition;
     private price: number;
-    public trip: Trip
+
     private returnTicket:returnTicket = returnTicket.FLASE;
-    constructor (bookingReferenceNumber: number,ticket: Ticket_Condition,trip:Trip , returnTickets:returnTicket) {
+    constructor (bookingReferenceNumber: number,ticket: Ticket_Condition, returnTickets:returnTicket) {
         this.bookingReferenceNumber = bookingReferenceNumber;
         this.setPrice(ticket);
-        this.trip = trip;
         this.returnTicket = returnTickets
     }
     setReturnTickets(returnTickets: returnTicket){
@@ -51,9 +50,7 @@ export class Booking {
     isReturn(){
        return this.returnTicket
     }
-    getTrip(){
-        return this.trip
-    }
+    
     getReturnTicketsBooking(){
         if (this.returnTicket === returnTicket.FLASE){
 

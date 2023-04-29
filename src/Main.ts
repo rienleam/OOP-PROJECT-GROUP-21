@@ -42,8 +42,8 @@ let schedudeTime1 = new Schedule(departureDate1,arrivalDate1,crew1)
 
 // create passenger
 let passenger1 = new Passenger("Socheat","lun",20,"0199455",Gender.MALE)
-let passenger2 = new Passenger("Socheat","lun",20,"0199455",Gender.MALE)
-let passenger3 = new Passenger("Socheat","lun",20,"0199455",Gender.MALE)
+let passenger2 = new Passenger("Mr","Alone",20,"0199455",Gender.MALE)
+let passenger3 = new Passenger("Monika","Tep",20,"0199455",Gender.MALE)
 // create seats 
 let seat1 = new Seat("A001",Ticket_Condition.BUSINESS_CLASS)
 let seat2 = new Seat("A002",Ticket_Condition.BUSINESS_CLASS)
@@ -68,9 +68,11 @@ let Flight1 = new Flight("CA6062",aeroplan1,gate1,schedudeTime1)
 let trip1 = new Trip("Cambodia","UK")
 trip1.addFlight(Flight1)
 trip1.setPassengerToSeat("A001",passenger1)
+trip1.setPassengerToSeat("A002",passenger2)
 
 // create booking
-let booking1 = new Booking(860767,Ticket_Condition.ECONOMEY_FLEX,trip1,returnTicket.FLASE);
+let booking1 = new Booking(860767,Ticket_Condition.ECONOMEY_FLEX,returnTicket.TRUE);
+let booking2 = new Booking(860767,Ticket_Condition.BUSINESS_CLASS,returnTicket.TRUE);
 
 // create credit card
 let card1 = new CreditCard("12344",459,"5/24")
@@ -79,6 +81,9 @@ let frequentflyer1 = new FrequentFlyer(100,"PS001")
 passenger1.addCreditCard(card1)
 passenger1.addFrequentFlyer(frequentflyer1)
 passenger1.bookingTicket(booking1)
+passenger2.addCreditCard(card1)
+passenger2.addFrequentFlyer(frequentflyer1)
+passenger2.bookingTicket(booking2)
 // console.log(passenger1);
 // create route 
 let route1 = new Route(airport2,airport1)

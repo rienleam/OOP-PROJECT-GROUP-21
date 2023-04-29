@@ -1,3 +1,4 @@
+import { Seat } from "../Aeroplan/Seat";
 import { Flight } from "../Trip/Fight";
 import { Crew } from "./Crew";
 import { Route } from "./Route";
@@ -27,19 +28,20 @@ export class AirlineCompany {
     //     });
     //     return returnNumber;
     // }
-    getReturnTicket(flight: Flight) {
-        let returnNumber: number = 0
+    getReturnTicket(flight: Flight):number {
+        
+        let returnNumber:number = 0;
         for (let route of this.routes){
             let seats = route.getFlight(flight).getAeroplan().getAllSeat()
             for(let seat of seats){
-                
-                if (seat.getPassenger().getReturnedBooking() == true){
-                    returnNumber += 1;
+                if(seat.getPassenger() !== undefined){
+                    if (seat.getPassenger().getReturnedBooking() == true){
+                        returnNumber+=1
+                    }
                 }
-                return seat.getPassenger().getReturnedBooking()
             }
         }
-        // return returnNumber;
+        return returnNumber
     }
     getAllEmployeesSalary(): number {
         let totalEmployeesSalary = 0;

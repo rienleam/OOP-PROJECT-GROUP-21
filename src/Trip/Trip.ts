@@ -8,12 +8,16 @@ export class Trip {
     private arrivalPlace: string;
     private flights: Flight[] = [];
     private bags: Bag[] = [];
+    private bookings: Booking[] = [];
 
     constructor(departurePlace: string, arrivalPlace: string) {
         this.departurePlace = departurePlace;
         this.arrivalPlace = arrivalPlace;
     }
 
+    addBooking(...booking: Booking[]){
+        this.bookings.push(...booking);
+    }
     addFlight(...flight: Flight[]) {
         this.flights.push(...flight)
     }
