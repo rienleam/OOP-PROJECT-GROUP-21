@@ -1,6 +1,5 @@
 import { Aeroplane } from "../Aeroplan/Aeroplan";
 import { Gate } from "../Airport/Gate";
-import { Date } from "../DateTime/Date";
 import { Schedule } from "../DateTime/Schedule";
 import { Passenger } from "../Human/Passenger";
 
@@ -34,15 +33,5 @@ export class Flight {
         });
         return passengers
     }
-
-    // setPassengerToSeat(seatID: string, passenger: Passenger) {
-    //     this.aeroplan.getAllAvailableSeat().forEach(seat => {
-    //         if (seat.seatID === seatID && seat.checKAvailable()) {
-    //             seat.setPassenger(passenger)
-    //         }
-    //     });
-    //     return this;
-    // }
-
 
 }
