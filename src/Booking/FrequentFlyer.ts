@@ -1,5 +1,3 @@
-import { Passenger } from "../Human/Passenger"
-
 export class FrequentFlyer {
     private awardPoint: number
     private memberID: string

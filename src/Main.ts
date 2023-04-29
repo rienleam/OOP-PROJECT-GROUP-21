@@ -1,5 +1,5 @@
 import { Aeroplane } from "./Aeroplan/Aeroplan";
-import { Seat } from "./Aeroplan/Seat";
+import { Meal, Seat } from "./Aeroplan/Seat";
 import { AirlineCompany } from "./AirlineCompany/AirlineCompany";
 import { Crew } from "./AirlineCompany/Crew";
 import { Route } from "./AirlineCompany/Route";
@@ -67,8 +67,8 @@ let Flight1 = new Flight("CA6062",aeroplan1,gate1,schedudeTime1)
 //create Trip 
 let trip1 = new Trip("Cambodia","UK")
 trip1.addFlight(Flight1)
-trip1.setPassengerToSeat("A001",passenger1)
-trip1.setPassengerToSeat("A002",passenger2)
+trip1.setPassengerToSeat("A001",passenger1,Meal.DAIRY_FREE)
+trip1.setPassengerToSeat("A002",passenger2,Meal.HALAL)
 
 // create booking
 let booking1 = new Booking(860767,Ticket_Condition.ECONOMEY_FLEX,returnTicket.TRUE);
@@ -99,6 +99,6 @@ Airline.addRoute(route1)
 
 
 // console.log(Airline.getReturnTicket(Flight1));
-console.log(Airline.getReturnTicket(Flight1));
+console.log(Airline.getAllMeal(Flight1));
 // console.log(route1);
 

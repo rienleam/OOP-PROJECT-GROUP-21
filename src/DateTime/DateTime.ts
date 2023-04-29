@@ -3,7 +3,7 @@ export class DateTime  {
     month: number;
     day: number;
     hour: number
-     minute: number
+    minute: number
     constructor(year:number, month:number, day:number,hour:number,minute:number){
         this.year = year;
         this.month = month;

@@ -1,3 +1,4 @@
+import { Meal } from "../Aeroplan/Seat";
 import { Booking } from "../Booking/Booking";
 import { Passenger } from "../Human/Passenger";
 import { Bag } from "./Bag";
@@ -15,7 +16,7 @@ export class Trip {
         this.arrivalPlace = arrivalPlace;
     }
 
-    addBooking(...booking: Booking[]){
+    addBooking(...booking: Booking[]) {
         this.bookings.push(...booking);
     }
     addFlight(...flight: Flight[]) {
@@ -42,11 +43,11 @@ export class Trip {
             });
         });
     }
-    setPassengerToSeat(seatID: string, passenger: Passenger) {
+    setPassengerToSeat(seatID: string, passenger: Passenger,meal:Meal) {
         this.flights.forEach(flight => {
             flight.getAeroplan().getAllAvailableSeat().forEach(seat => {
                 if (seat.seatID === seatID && seat.checKAvailable()) {
-                    seat.setPassenger(passenger)
+                    seat.setPassenger(passenger,meal);
                 }
             });
         });

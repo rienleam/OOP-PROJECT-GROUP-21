@@ -1,13 +1,4 @@
-import { Flight } from "../Trip/Fight";
-import { Trip } from "../Trip/Trip";
 
-export enum Meal {
-    VEGETARIAN,
-    VEGAN,
-    DAIRY_FREE,
-    HALAL,
-    HOSHER
-}
 export enum Ticket_Condition {
     ECONOMEY_CLASSIC,
     ECONOMEY_FLEX,
@@ -22,14 +13,13 @@ export class Booking {
     private ticket: Ticket_Condition;
     private price: number;
 
+
     private returnTicket:returnTicket = returnTicket.FLASE;
     constructor (bookingReferenceNumber: number,ticket: Ticket_Condition, returnTickets:returnTicket) {
         this.bookingReferenceNumber = bookingReferenceNumber;
         this.setPrice(ticket);
         this.returnTicket = returnTickets
-    }
-    setReturnTickets(returnTickets: returnTicket){
-        this.returnTicket = returnTickets;
+
     }
     setPrice(ticket:Ticket_Condition) {
         if (ticket === Ticket_Condition.BUSINESS_CLASS ){

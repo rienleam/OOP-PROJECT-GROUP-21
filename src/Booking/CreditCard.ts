@@ -1,5 +1,3 @@
-import { Passenger } from "../Human/Passenger"
-
 export class CreditCard {
     private cardNumber: string;
     private CVV: number
