@@ -1,4 +1,4 @@
-import { Gate } from "../Airport/Gate";
+
 import { Meal } from "../Aeroplan/Seat";
 import { Booking } from "../Booking/Booking";
 import { Passenger } from "../Human/Passenger";

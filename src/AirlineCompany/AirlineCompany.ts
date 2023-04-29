@@ -17,17 +17,6 @@ export class AirlineCompany {
     addCrew(...crew: Crew[]) {
         this.crews.push(...crew);
     }
-    // getReturnTicket(flight: Flight): number {
-    //     let returnNumber: number = 0
-    //     this.routes.forEach(route => {
-    //         route.getFlight(flight).getAeroplan().getAllSeat().forEach(seat => {
-    //             if (seat.getPassenger().getReturnedBooking()) {
-    //                 returnNumber += 1;
-    //             }
-    //         });
-    //     });
-    //     return returnNumber;
-    // }
     getReturnTicket(flight: Flight):number {
         
         let returnNumber:number = 0;

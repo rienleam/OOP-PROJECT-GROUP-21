@@ -91,7 +91,7 @@ passenger1.bookingTicket(booking1)
 passenger2.addCreditCard(card1)
 passenger2.addFrequentFlyer(frequentflyer1)
 passenger2.bookingTicket(booking2)
-// console.log(passenger1);
+
 // create route 
 let route1 = new Route(airport2,airport1)
 route1.addFlight(flight1)
@@ -101,12 +101,12 @@ Airline.addCrew(crew1)
 Airline.addRoute(route1)
 
 
-// console.log(Airline.getReturnTicket(Flight1));
-// console.log(Airline.getReturnTicket(Flight1));
-// console.log(route1);
+console.log(Airline.getReturnTicket(flight1));
+console.log(Airline.getReturnTicket(flight1));
+console.log(route1);
 schedudeTime1.addFlight(flight1);
 
-// console.log(crew1.getFightHaveToJoin(Pilot1, departureDate1));
+console.log(crew1.getFightHaveToJoin(Pilot1, departureDate1));
 
 // test userstory 6
 console.log(passenger1.getWaitingGate(860767));
