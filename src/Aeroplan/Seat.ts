@@ -3,38 +3,35 @@ import { Passenger } from "../Human/Passenger";
 
 export class Seat {
     private seatClass: Ticket_Condition;
-    private seatID: string
+    public seatID: string
     private isUnavailable: boolean = false;
-    private passenger: Passenger| undefined;
-    constructor (seatID: string,seatClass: Ticket_Condition){
+    private passenger: Passenger | undefined;
+    constructor(seatID: string, seatClass: Ticket_Condition) {
         this.seatClass = seatClass;
         this.seatID = seatID;
     }
-    checKAvailable(){
-        if (this.passenger !== undefined){
-            return "This seat is unavailable"
+    checKAvailable() {
+        if (this.passenger !== undefined) {
+            return false
         }
-        else{
-            return "This seat is available"
+        else {
+            return true
         }
     }
-    setPassenger(passenger: Passenger){
-        if (this.isUnavailable === false){
+    setPassenger(passenger: Passenger) {
+        if (this.isUnavailable === false) {
             this.passenger = passenger;
             this.isUnavailable = true;
-            return "Your booking is successfully"
-        }
-        else{
-            return "This seat is unavailable"
         }
     }
-    getPassenger(){
+    getPassenger() {
         return this.passenger;
     }
-    cancelSeat(){
+    cancelSeat() {
         this.passenger = undefined;
     }
-    getSeatClass(){
+    getSeatClass() {
         return this.seatClass;
     }
+
 }

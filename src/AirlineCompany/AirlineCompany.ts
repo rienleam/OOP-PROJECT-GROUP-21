@@ -6,27 +6,42 @@ export class AirlineCompany {
     private name: string
     private routes: Route[] = [];
     private crews: Crew[] = [];
-    constructor (name: string) {
+    constructor(name: string) {
         this.name = name;
     }
 
-    addRoute(... route:Route[]){
-        this.routes.push(... route);
+    addRoute(...route: Route[]) {
+        this.routes.push(...route);
     }
-    addCrew(...crew:Crew[]){
-        this.crews.push(... crew);
+    addCrew(...crew: Crew[]) {
+        this.crews.push(...crew);
     }
-    getReturnFlight(flight:Flight): Flight| undefined{
-        let reult: Flight| undefined;
-        this.routes.forEach(route => {
-            reult = route.getFlight(flight)
-        });
-        return reult;
+    // getReturnTicket(flight: Flight): number {
+    //     let returnNumber: number = 0
+    //     this.routes.forEach(route => {
+    //         route.getFlight(flight).getAeroplan().getAllSeat().forEach(seat => {
+    //             if (seat.getPassenger().getReturnedBooking()) {
+    //                 returnNumber += 1;
+    //             }
+    //         });
+    //     });
+    //     return returnNumber;
+    // }
+    getReturnTicket(flight: Flight) {
+        let returnNumber: number = 0
+        for (let route of this.routes){
+            let seats = route.getFlight(flight).getAeroplan().getAllSeat()
+            for(let seat of seats){
+                
+                if (seat.getPassenger().getReturnedBooking() == true){
+                    returnNumber += 1;
+                }
+                return seat.getPassenger().getReturnedBooking()
+            }
+        }
+        // return returnNumber;
     }
-    getReturnTicket(){
-        // if(this.getReturnFlight())
-    }
-    getAllEmployeesSalary (): number{
+    getAllEmployeesSalary(): number {
         let totalEmployeesSalary = 0;
         this.crews.forEach(eachCrew => {
             totalEmployeesSalary += eachCrew.getTotalSalary();

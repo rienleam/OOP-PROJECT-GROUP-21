@@ -1,4 +1,4 @@
-import { Booking } from "../Booking/Booking";
+import { Booking, returnTicket } from "../Booking/Booking";
 import { CreditCard } from "../Booking/CreditCard";
 import { FrequentFlyer } from "../Booking/FrequentFlyer";
 import { Flight } from "../Trip/Fight";
@@ -44,9 +44,9 @@ export class Passenger extends Person {
         }
     }
     getReturnedBooking() {
-        this.bookings.forEach(booking => {
-            booking.getTrip()
-        });
+        for (let i = 0; i < this.bookings.length;i++){
+            return this.bookings[i].getReturnTicketsBooking()
+        }
     }
 }
 
