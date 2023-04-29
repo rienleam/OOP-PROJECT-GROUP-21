@@ -7,7 +7,7 @@ import { Passenger } from "../Human/Passenger";
 export class Flight {
     private flightReferenceNumber: string;
     private aeroplan: Aeroplane;
-    private gate: Gate;
+    public gate: Gate;
     private schedule: Schedule;
 
     constructor(flightReferenceNumber: string, aeroplan: Aeroplane, gate: Gate, schedule: Schedule) {
@@ -16,7 +16,6 @@ export class Flight {
         this.gate = gate;
         this.schedule = schedule;
     }
-
     isEqual(other: Flight): boolean {
         return this.flightReferenceNumber === other.flightReferenceNumber
             && this.aeroplan === other.aeroplan

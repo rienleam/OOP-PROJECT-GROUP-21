@@ -13,6 +13,9 @@ export class Schedule {
         this.departureDate = departureDate;
         this.crew = crew;
     }
+    addFlight(flight:Flight){
+        this.flights.push(flight);
+    }
     compareDate (other:DateTime){
         if(this.departureDate.year && other.year && this.departureDate.month == other.month && this.departureDate.day == other.day) {
             return true;

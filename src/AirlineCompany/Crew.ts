@@ -14,6 +14,9 @@ export class Crew {
         this.pilot = pilot;
         this.coPilot = coPilot;
     }
+    addSchedule(schedule:Schedule):void {
+        this.shedule.push(schedule);
+    }
     addFlightAttendant(...flightAttendant:FlightAttendant[]){
         this.flightAttendant.push(...flightAttendant);
     }
@@ -26,10 +29,10 @@ export class Crew {
         });
         return totalEmployeesSalary;
     }
-    getFightHaveToJoin (date: DateTime){
+    getFightHaveToJoin (pilot: Pilot ,date: DateTime){
         let numberOfFlights = 0;
         this.shedule.forEach(eachSchedule => {
-            if (eachSchedule.compareDate(date)) {
+            if (eachSchedule.compareDate(date) && this.pilot.comparePilot(pilot)) {
                 numberOfFlights += eachSchedule.getFlights();
             }
         });

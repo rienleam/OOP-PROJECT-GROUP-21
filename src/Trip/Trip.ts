@@ -1,3 +1,4 @@
+import { Gate } from "../Airport/Gate";
 import { Booking } from "../Booking/Booking";
 import { Passenger } from "../Human/Passenger";
 import { Bag } from "./Bag";
@@ -6,7 +7,7 @@ import { Flight } from "./Fight";
 export class Trip {
     private departurePlace: string;
     private arrivalPlace: string;
-    private flights: Flight[] = [];
+    public flights: Flight[] = [];
     private bags: Bag[] = [];
 
     constructor(departurePlace: string, arrivalPlace: string) {

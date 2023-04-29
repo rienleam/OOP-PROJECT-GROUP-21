@@ -1,3 +1,4 @@
+import { Gate } from "../Airport/Gate";
 import { Booking, returnTicket } from "../Booking/Booking";
 import { CreditCard } from "../Booking/CreditCard";
 import { FrequentFlyer } from "../Booking/FrequentFlyer";
@@ -47,6 +48,17 @@ export class Passenger extends Person {
         for (let i = 0; i < this.bookings.length;i++){
             return this.bookings[i].getReturnTicketsBooking()
         }
+    }
+    getWaitingGate (otherBookingReferenceNumber:number){
+        let allGate:Gate[] = []
+        this.bookings.forEach(eachBooking => {
+            if (eachBooking.bookingReferenceNumber == otherBookingReferenceNumber){
+                eachBooking.trip.flights.forEach(eachFlight =>{
+                    allGate.push(eachFlight.gate)
+                })
+            }
+        });
+        return allGate;
     }
 }
 

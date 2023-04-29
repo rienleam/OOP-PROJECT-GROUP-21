@@ -14,4 +14,7 @@ export class Pilot extends Employee{
     getSalary():number{
         return this.salary;
     }
+    comparePilot(other: Pilot){
+        return other.skill == this.skill;
+    }
 }
