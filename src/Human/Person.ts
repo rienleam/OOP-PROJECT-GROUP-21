@@ -3,12 +3,11 @@ export enum Gender {
     FEMALE
 }
 export abstract class Person {
-    private firstName: string;
-    private lastName: string;
-    private age: number;
-    private phoneNumber: string;
-    private gender: Gender;
-
+    protected firstName: string;
+    protected lastName: string;
+    protected age: number;
+    protected phoneNumber: string;
+    protected gender: Gender;
     constructor(firstName: string, lastName: string, age: number, phoneNumber: string, gender: Gender) {
         this.firstName = firstName;
         this.lastName = lastName;

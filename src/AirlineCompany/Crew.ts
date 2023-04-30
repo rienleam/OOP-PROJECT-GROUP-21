@@ -29,6 +29,7 @@ export class Crew {
         });
         return totalEmployeesSalary;
     }
+
     getFightHaveToJoin (pilot: Pilot ,date: DateTime){
         let numberOfFlights = 0;
         this.shedule.forEach(eachSchedule => {
@@ -38,4 +39,5 @@ export class Crew {
         });
         return numberOfFlights;
     }
+    
 }

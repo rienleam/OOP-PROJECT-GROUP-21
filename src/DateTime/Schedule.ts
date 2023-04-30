@@ -16,8 +16,11 @@ export class Schedule {
     addFlight(flight:Flight){
         this.flights.push(flight);
     }
+
     compareDate (other:DateTime){
-        if(this.departureDate.year && other.year && this.departureDate.month == other.month && this.departureDate.day == other.day) {
+        if(this.departureDate.year == other.year 
+            && this.departureDate.month == other.month 
+            && this.departureDate.day == other.day) {
             return true;
         }
         return false;
@@ -27,4 +30,5 @@ export class Schedule {
         numberOfFlights = this.flights.length;
         return numberOfFlights;
     }
+
 }
