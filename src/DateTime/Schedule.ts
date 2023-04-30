@@ -18,12 +18,11 @@ export class Schedule {
     }
 
     compareDate (other:DateTime){
-        if(this.departureDate.year == other.year 
+        return this.departureDate.year == other.year 
             && this.departureDate.month == other.month 
-            && this.departureDate.day == other.day) {
-            return true;
-        }
-        return false;
+            && this.departureDate.day == other.day
+            && this.departureDate.hour == other.hour
+            && this.departureDate.minute == other.minute
     }
     getFlights (): number {
         let numberOfFlights: number = 0;

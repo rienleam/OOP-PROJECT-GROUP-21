@@ -57,11 +57,11 @@ export class AirlineCompany {
     getAllFlightHaveToJoin(pilot: Pilot ,date: DateTime): number{
         let numberOfFlights:number = 0
         this.crews.forEach(eachCrew => {
-            eachCrew.getFightHaveToJoin(pilot, date);
+            numberOfFlights += eachCrew.getFlightHaveToJoin(pilot, date);
         });
         return numberOfFlights;
     }
-    
+
 }
 
 // let Airline1 = new AirlineCompany("Cambodia Airline");
