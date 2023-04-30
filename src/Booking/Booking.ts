@@ -15,10 +15,11 @@ export class Booking {
     private price: number;
     public trip: Trip
     private returnTicket:returnTicket = returnTicket.FLASE;
-    constructor (bookingReferenceNumber: number,ticket: Ticket_Condition, returnTickets:returnTicket) {
+    constructor (bookingReferenceNumber: number,ticket: Ticket_Condition, returnTickets:returnTicket,trip: Trip) {
         this.bookingReferenceNumber = bookingReferenceNumber;
         this.setPrice(ticket);
         this.returnTicket = returnTickets
+        this.trip = trip;
 
     }
     setPrice(ticket:Ticket_Condition) {

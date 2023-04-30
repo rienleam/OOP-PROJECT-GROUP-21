@@ -49,6 +49,7 @@ export class Passenger extends Person {
             return this.bookings[i].getReturnTicketsBooking()
         }
     }
+
     getWaitingGate (otherBookingReferenceNumber:number){
         let allGate:Gate[] = []
         this.bookings.forEach(eachBooking => {

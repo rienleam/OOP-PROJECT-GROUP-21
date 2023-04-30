@@ -73,13 +73,12 @@ trip1.addFlight(flight1)
 trip1.addFlight(flight2)
 trip1.addFlight(flight3)
 
-trip1.addFlight(flight1)
 trip1.setPassengerToSeat("A001",passenger1,Meal.DAIRY_FREE)
 trip1.setPassengerToSeat("A002",passenger2,Meal.HALAL)
 
 // create booking
-let booking1 = new Booking(860767,Ticket_Condition.ECONOMEY_FLEX,returnTicket.TRUE);
-let booking2 = new Booking(860767,Ticket_Condition.BUSINESS_CLASS,returnTicket.TRUE);
+let booking1 = new Booking(860767,Ticket_Condition.ECONOMEY_FLEX,returnTicket.TRUE,trip1);
+let booking2 = new Booking(860767,Ticket_Condition.BUSINESS_CLASS,returnTicket.TRUE,trip1);
 
 // create credit card
 let card1 = new CreditCard("12344",459,"5/24")
@@ -101,12 +100,12 @@ Airline.addCrew(crew1)
 Airline.addRoute(route1)
 
 
-console.log(Airline.getReturnTicket(flight1));
-console.log(Airline.getReturnTicket(flight1));
-console.log(route1);
+// console.log(Airline.getReturnTicket(flight1));
+// console.log(Airline.getReturnTicket(flight1));
+// console.log(route1);
 schedudeTime1.addFlight(flight1);
 
-console.log(crew1.getFightHaveToJoin(Pilot1, departureDate1));
+// console.log(crew1.getFightHaveToJoin(Pilot1, departureDate1));
 
 // test userstory 6
 console.log(passenger1.getWaitingGate(860767));
