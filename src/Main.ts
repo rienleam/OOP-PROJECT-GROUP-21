@@ -73,6 +73,7 @@ trip1.addFlight(flight1)
 trip1.addFlight(flight2)
 trip1.addFlight(flight3)
 
+trip1.addFlight(flight1)
 trip1.setPassengerToSeat("A001",passenger1,Meal.DAIRY_FREE)
 trip1.setPassengerToSeat("A002",passenger2,Meal.HALAL)
 
@@ -100,12 +101,29 @@ Airline.addCrew(crew1)
 Airline.addRoute(route1)
 
 
-// console.log(Airline.getReturnTicket(flight1));
-// console.log(Airline.getReturnTicket(flight1));
-// console.log(route1);
-schedudeTime1.addFlight(flight1);
+// // console.log(Airline.getReturnTicket(flight1));
+// // console.log(Airline.getReturnTicket(flight1));
+// // console.log(route1);
+// schedudeTime1.addFlight(flight1);
 
-// console.log(crew1.getFightHaveToJoin(Pilot1, departureDate1));
+// // console.log(crew1.getFightHaveToJoin(Pilot1, departureDate1));
 
-// test userstory 6
-console.log(passenger1.getWaitingGate(860767));
+// // test userstory 6
+// // console.log(passenger1.getWaitingGate(860767));
+
+
+// // test second part
+// // crews
+// let Pilot1 = new Pilot("Socheat", "Lun", 20, "0969293520", Gender.MALE, 1000, 2)
+// let CoPilot1 = new CoPilot("Mr", "A", 20, "0969293520", Gender.MALE, 850, 2)
+// let flightAttendant1 = new FlightAttendant("Sreypich", "Pat", 20, "0969293520", Gender.FEMALE, 700, 2)
+// let flightAttendant2 = new FlightAttendant("Sreynak", "Kun", 20, "0969293520", Gender.FEMALE, 700, 2)
+// let flightAttendant3 = new FlightAttendant("Ranny", "Yem", 20, "0969293520", Gender.FEMALE, 700, 2)
+
+// let crew1 = new Crew(Pilot1, CoPilot1)
+// crew1.addFlightAttendant(flightAttendant1, flightAttendant2, flightAttendant3)
+// //Airline company
+// let Airline = new AirlineCompany("Cambodia Airline")
+// Airline.addCrew(crew1)
+// console.log(Airline.getAllEmployeesSalary());
+
