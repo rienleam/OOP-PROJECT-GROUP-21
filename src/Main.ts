@@ -153,11 +153,15 @@ import { Trip } from "./Trip/Trip";
 
 // // Date Time
 // let departureDate1 = new DateTime(2023, 9, 21, 3, 30)
+// let departureDate2 = new DateTime(2023, 10, 21, 8, 30)
+// let departureDate3 = new DateTime(2023, 12, 21, 7, 45)
 // let arrivalDate1 = new DateTime(2023, 9, 22, 10, 30)
 
 // // schedude time
 // let schedudeTime1 = new Schedule(departureDate1,arrivalDate1,crew1)
 // crew1.addSchedule(schedudeTime1);
+// let schedudeTime2 = new Schedule(departureDate2,arrivalDate1,crew1)
+// crew1.addSchedule(schedudeTime2);
 
 // // create seats 
 // let seat1 = new Seat("A001",Ticket_Condition.BUSINESS_CLASS)
@@ -176,7 +180,7 @@ import { Trip } from "./Trip/Trip";
 
 // //create Flight 
 // let flight1 = new Flight("CA6062",aeroplan1,gate1,schedudeTime1)
-// let flight2 = new Flight("CA6856",aeroplan1,gate2,schedudeTime1)
+// let flight2 = new Flight("CA6856",aeroplan1,gate2,schedudeTime2)
 // let flight3 = new Flight("CA9475",aeroplan1,gate3,schedudeTime1)
 
 // //Airline company
@@ -184,5 +188,5 @@ import { Trip } from "./Trip/Trip";
 // Airline.addCrew(crew1)
 
 // schedudeTime1.addFlight(flight1)
-// schedudeTime1.addFlight(flight2)
+// schedudeTime2.addFlight(flight2)
 // console.log(Airline.getAllFlightHaveToJoin(Pilot1, departureDate1));
