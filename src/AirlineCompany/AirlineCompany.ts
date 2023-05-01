@@ -1,4 +1,6 @@
 import { Meal, Seat } from "../Aeroplan/Seat";
+import { DateTime } from "../DateTime/DateTime";
+import { Pilot } from "../Human/Staff/Pilot";
 import { Flight } from "../Trip/Fight";
 import { Crew } from "./Crew";
 import { Route } from "./Route";
@@ -51,6 +53,15 @@ export class AirlineCompany {
         });
         return totalEmployeesSalary;
     }
+
+    getAllFlightHaveToJoin(pilot: Pilot ,date: DateTime): number{
+        let numberOfFlights:number = 0
+        this.crews.forEach(eachCrew => {
+            numberOfFlights += eachCrew.getFlightHaveToJoin(pilot, date);
+        });
+        return numberOfFlights;
+    }
+
 }
 
 // let Airline1 = new AirlineCompany("Cambodia Airline");

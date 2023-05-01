@@ -13,7 +13,14 @@ export class Pilot extends Employee {
     getSalary(): number {
         return this.salary;
     }
+
     comparePilot(other: Pilot){
-        return other.skill == this.skill;
+        return other.skill == this.skill 
+        && other.firstName == this.firstName 
+        && other.lastName == this.lastName 
+        && other.age == this.age 
+        && other.phoneNumber == this.phoneNumber
+        && other.salary == this.salary;
     }
+    
 }
